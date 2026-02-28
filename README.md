@@ -1,0 +1,1 @@
+Frontend created to interact with the [iNaturalist API](https://api.inaturalist.org/v1/docs/).
