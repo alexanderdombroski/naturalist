@@ -1,1 +1,129 @@
-@import "./normalize.css"
+@import "./normalize.css";
+
+:root {
+  --primary-color: #4f6f3c;
+  --secondary-color: #6b4f2a;
+  --accent1-color: #f4f1e6;
+  --accent2-color: #ea8b0e;
+
+  --background-light-color: var(--accent1-color);
+  --foreground-light-color: var(--accent1-color);
+  --foreground-dark-color: var(--secondary-color);
+
+  --header-font: Georgia, "Times New Roman", Times, serif;
+  --paragraph-font: Verdana, Geneva, Tahoma, sans-serif;
+  --logo-font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===========================================
+   GLOBAL
+   =========================================== */
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--background-light-color);
+  color: var(--foreground-dark-color);
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--header-font);
+}
+
+p,
+a {
+  font-family: var(--paragraph-font);
+}
+
+/* ===========================================
+   HEADER
+   =========================================== */
+
+header {
+  background-color: var(--primary-color);
+  height: 5rem;
+  align-content: center;
+  padding: 0.5rem 2rem;
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+      margin: 0;
+      text-align: center;
+      font-family: var(--logo-font);
+    }
+
+    a,
+    svg {
+      color: var(--foreground-light-color);
+
+      &:hover {
+        color: var(--accent2-color);
+      }
+    }
+
+    svg {
+      width: 3.5rem;
+      fill: var(--foreground-light-color);
+      &:hover {
+        fill: var(--accent2-color);
+      }
+    }
+  }
+}
+
+/* ===========================================
+   MAIN
+   =========================================== */
+
+main {
+  padding: 1rem;
+
+  h2 {
+    text-align: center;
+  }
+}
+
+/* ===========================================
+   FOOTER
+   =========================================== */
+
+footer {
+  display: block;
+  margin-top: auto;
+  background-color: var(--primary-color);
+  height: 5rem;
+  align-content: center;
+
+  p {
+    margin: 0;
+    text-align: center;
+    color: var(--foreground-light-color);
+
+    a {
+      color: var(--foreground-light-color);
+
+      &:hover {
+        color: var(--accent2-color);
+      }
+    }
+  }
+}
