@@ -45,7 +45,8 @@ h6 {
 }
 
 p,
-a {
+a,
+label {
   font-family: var(--paragraph-font);
 }
 
