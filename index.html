@@ -1,12 +1,14 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nature Walk</title>
-  <script type="module" src="./scripts/main.js" type="module" defer></script>
   <link rel="stylesheet" href="./styles/main.css" />
+  <script type="module" src="./scripts/main.js" type="module" defer></script>
 </head>
+
 <body>
   <header>
     <nav>
@@ -22,22 +24,50 @@
   </header>
   <main>
     <h2>Take a Look!</h2>
-    <input type="checkbox" name="featured" id="featured" />
-    <label for="featured">Is Featured</label>
-    <input type="checkbox" name="noteworthy" id="noteworthy" />
-    <label for="noteworthy">Noteworthy</label>
+    <section class="filters">
+      <label for="places-search">Search by Location:</label>
+      <input list="place-list" id="places-search" name="places-search" type="search" />
+      <datalist id="place-list">
+        <!-- Search Result fill via JS -->
+      </datalist>
 
-    <label for="places-search">Places</label>
-    <input list="place-list" id="places-search" name="places-search" type="search">
-    <datalist id="place-list">
-      <!-- Search Result fill via JS -->
-    </datalist>
+      <!-- <label for="rank">Rank</label>
+      <select type="select" name="rank" id="rank" multiple title="ID's taxon must have this rank">
+        <option value="" selected></option>
+        <option value="kingdom">kingdom</option>
+        <option value="phylum">phylum</option>
+        <option value="subphylum">subphylum</option>
+        <option value="superclass">superclass</option>
+        <option value="class">class</option>
+        <option value="subclass">subclass</option>
+        <option value="superorder">superorder</option>
+        <option value="order">order</option>
+        <option value="suborder">suborder</option>
+        <option value="infraorder">infraorder</option>
+        <option value="superfamily">superfamily</option>
+        <option value="epifamily">epifamily</option>
+        <option value="family">family</option>
+        <option value="subfamily">subfamily</option>
+        <option value="supertribe">supertribe</option>
+        <option value="tribe">tribe</option>
+        <option value="subtribe">subtribe</option>
+        <option value="genus">genus</option>
+        <option value="genushybrid">genushybrid</option>
+        <option value="species">species</option>
+        <option value="hybrid">hybrid</option>
+        <option value="subspecies">subspecies</option>
+        <option value="variety">variety</option>
+        <option value="form">form</option>
+      </select> -->
+    </section>
 
-    <label for="project-search">Project</label>
-    <input list="project-list" id="project-search" name="project-search" type="search">
-    <datalist id="project-list">
-      <!-- Search Result fill via JS -->
-    </datalist>
+    <section class="gallery-grid">
+      <!-- Filled via JS -->
+    </section>
+
+    <div class="tooltip">
+      <!-- Filled via JS -->
+    </div>
   </main>
   <footer>
     <p>

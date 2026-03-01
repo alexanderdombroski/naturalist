@@ -101,6 +101,60 @@ main {
   h2 {
     text-align: center;
   }
+
+  input,
+  label {
+    display: block;
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+    margin-top: 1rem;
+    border: solid 0.25rem var(--secondary-color);
+    background-color: var(--secondary-color);
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border: solid 0.25rem var(--secondary-color);
+
+      img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        height: 200px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgb(0 0 0 / 0.6);
+        color: var(--accent1-color);
+        padding: 0.25rem 0.5rem;
+        font-size: 0.8rem;
+        text-align: center;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+
+.tooltip {
+  position: absolute;
+  background-color: var(--background-light-color);
+  color: var(--foreground-dark-color);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 /* ===========================================

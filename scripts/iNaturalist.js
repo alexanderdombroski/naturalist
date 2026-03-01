@@ -5,7 +5,6 @@ const BASE_URL = "https://api.inaturalist.org/v1";
 /** @param {string} endpoint */
 async function fetchEndpoint(endpoint) {
   const res = await fetch(`${BASE_URL}${endpoint}`);
-  console.log(res, 'res')
   return await res.json();
 }
 
@@ -17,24 +16,13 @@ async function fetchPlaces(query) {
   return data;
 }
 
-async function fetchProjects(params) {
-  const { q, place_id, featured, noteworthy } = params;
-  if (!q) return;
-  console.log(q)
-  const queryString = new URLSearchParams(params);
-  const data = await fetchEndpoint(`/projects/autocomplete?${queryString}`);
-  return data;
-}
-
-/** @param {number} projectId */
-export async function fetchProject(projectId) {
-  return fetchEndpoint(`/projects/${projectId}`)
+const defaultParams = { current: true, order: "desc", order_by: "created_at" };
+export async function fetchIdentifications(params = {}) {
+  const paramString = new URLSearchParams({ ...defaultParams, ...params });
+  return await fetchEndpoint(`/identifications?${paramString}`);
 }
 
 /** Throttle the API calls (max once every 500ms) */
 export const throttledFetchPlaces = throttle(fetchPlaces, 500, {
-  leading: true,
-});
-export const throttledFetchProjects = throttle(fetchProjects, 500, {
   leading: true,
 });
